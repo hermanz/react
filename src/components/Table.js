@@ -14,8 +14,8 @@ class Table extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      color: "Choose color",
-      light: ""
+      color: "white",
+      light: "bright"
     };
   }
 
@@ -41,14 +41,14 @@ class Table extends React.Component {
       <Row className="show-grid">
         <Col xs={12} md={4} mdOffset={8}>
     <DropdownButton title={"Skin color"}>
-      <MenuItem onClick={ () => this.changeColor("White") }>White</MenuItem>
-      <MenuItem onClick={ () => this.changeColor("Asian") }>Asian</MenuItem>
-      <MenuItem onClick={ () => this.changeColor("Dark") }>Dark</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("white") }>White</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("asian") }>Asian</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
     </DropdownButton>
 
     <DropdownButton title={"Lighting"}>
-      <MenuItem onClick={() => this.changeLight("Daylight")}>Daylight</MenuItem>
-      <MenuItem onClick={() => this.changeLight("Room Light")}>Room light</MenuItem>
+      <MenuItem onClick={() => this.changeLight("bright")}>Daylight</MenuItem>
+      <MenuItem onClick={() => this.changeLight("room")}>Room light</MenuItem>
     </DropdownButton>
         </Col>
       </Row>
