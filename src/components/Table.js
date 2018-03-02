@@ -41,9 +41,10 @@ class Table extends React.Component {
       <Row className="show-grid">
         <Col xs={12} md={4} mdOffset={8}>
     <DropdownButton title={"Skin color"}>
-      <MenuItem onClick={ () => this.changeColor("white") }>White</MenuItem>
-      <MenuItem onClick={ () => this.changeColor("asian") }>Asian</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("white") }>Light</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("asian") }>Medium</MenuItem>
       <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("asian") }>Upload photo</MenuItem>
     </DropdownButton>
 
     <DropdownButton title={"Lighting"}>
