@@ -4,7 +4,7 @@ const Product = ({ color }) => (
   <div>
     <p>Price: $100</p>
     <p>Skin Color: {color}</p>
-    <p>Concealer: temp</p> 
+    <p>Concealer: tem</p> 
   </div>
 )
 
