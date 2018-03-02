@@ -15,19 +15,23 @@ class Table extends React.Component {
     super();
     this.state = {
       color: "white",
-      light: "bright"
+      light: "bright",
+      drop_skin: "Skin color",
+      drop_light: "Lighting",
     };
   }
 
   changeColor(c) {
     this.setState({
-      color: c
+      color: c,
+      drop_skin: c
     });
   }
 
   changeLight(x) {
     this.setState({
-      light: x
+      light: x,
+      drop_light:x
     });
   }
 
@@ -39,14 +43,14 @@ class Table extends React.Component {
         <h2 style={{color:'#d2691e'}} >Compare with similar items</h2>
       </Row>
       <Row className="show-grid">
-        <Col xs={12} md={4} mdOffset={8}>
-    <DropdownButton title={"Skin color"}>
+        <Col xs={12} md={4} mdOffset={7}>
+              <DropdownButton title={this.state.drop_skin} className="completer-dropdown-holder">
       <MenuItem onClick={ () => this.changeColor("white") }>White</MenuItem>
       <MenuItem onClick={ () => this.changeColor("asian") }>Asian</MenuItem>
       <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
     </DropdownButton>
 
-    <DropdownButton title={"Lighting"}>
+              <DropdownButton title={this.state.drop_light} className="completer-dropdown-holder">
       <MenuItem onClick={() => this.changeLight("bright")}>Daylight</MenuItem>
       <MenuItem onClick={() => this.changeLight("room")}>Room light</MenuItem>
     </DropdownButton>
@@ -55,7 +59,7 @@ class Table extends React.Component {
 
       <Row className="show-grid">
         <Col xs={12} md={2}>
-        <ListGroup>
+          <ListGroup>
           <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
           <ListGroupItem>Name</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
