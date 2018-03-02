@@ -52,6 +52,7 @@ class Table extends React.Component {
       <MenuItem onClick={ () => this.changeColor("white") }>White</MenuItem>
       <MenuItem onClick={ () => this.changeColor("asian") }>Asian</MenuItem>
       <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("asian") }>Upload photo</MenuItem>
     </DropdownButton>
 
     <DropdownButton title={this.state.drop_light} className="completer-dropdown-holder">
