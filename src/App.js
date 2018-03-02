@@ -7,7 +7,7 @@ import Table from './components/Table'
 
 class App extends Component {
   render() {
-    const asins = ["asin0", "asin1", "asin2"];
+    const asins = ["asin0", "asin1", "asin2", "asin3", "asin4"];
 
     return (
       <div>
