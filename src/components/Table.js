@@ -14,8 +14,8 @@ class Table extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      color: "color choice",
-      light: "light choice"
+      color: "Choose color",
+      light: ""
     };
   }
 
@@ -25,46 +25,44 @@ class Table extends React.Component {
     });
   }
 
-  changeLight(l) {
+  changeLight(x) {
     this.setState({
-      light: l
+      light: x
     });
   }
 
   render() {
     return (
   <div>
-    <h2>Compare with similar items</h2>
+    <Grid >
+      <Row>
+        <h2>Compare with similar items</h2>
+      </Row>
+      <Row className="show-grid">
+        <Col xs={12} md={4} mdOffset={8}>
     <DropdownButton title={"Skin color"}>
       <MenuItem onClick={ () => this.changeColor("White") }>White</MenuItem>
       <MenuItem onClick={ () => this.changeColor("Asian") }>Asian</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("Dark") }>Dark</MenuItem>
     </DropdownButton>
 
-    <DropdownButton title={"light effect"}>
-      <MenuItem onClick={() => this.changeLight("Warm light")}>Warm light</MenuItem>
+    <DropdownButton title={"Lighting"}>
+      <MenuItem onClick={() => this.changeLight("Daylight")}>Daylight</MenuItem>
       <MenuItem onClick={() => this.changeLight("Room Light")}>Room light</MenuItem>
-      <MenuItem onClick={() => this.changeLight("Cold Light")}>Cold light</MenuItem>
     </DropdownButton>
+        </Col>
+      </Row>
 
-    <Grid >
       <Row className="show-grid">
         <Col xs={12} md={2}>
         <ListGroup>
           <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
-          <ListGroupItem>ASIN</ListGroupItem>
+          <ListGroupItem>Name</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
-          <ListGroupItem><DropdownButton title={"Skin color"}>
-            <MenuItem onClick={() => this.changeColor("White")}>White</MenuItem>
-            <MenuItem onClick={() => this.changeColor("Asian")}>Asian</MenuItem>
-          </DropdownButton></ListGroupItem>
-          <ListGroupItem><DropdownButton title={"light effect"}>
-            <MenuItem onClick={() => this.changeLight("Warm light")}>Warm light</MenuItem>
-            <MenuItem onClick={() => this.changeLight("Room Light")}>Room light</MenuItem>
-            <MenuItem onClick={() => this.changeLight("Cold Light")}>Cold light</MenuItem>
-          </DropdownButton></ListGroupItem>
+          <ListGroupItem>Color sample</ListGroupItem>
         </ListGroup>
         </Col>
-      { this.props.asins.map( e => <Product asin={ e } color={this.state.color} light={this.state.light}/> ).map( e => <Col xs={12} md={2}>{e}</Col>) }
+      { this.props.asins.map( e => <Product key={e.toString()} asin={ e } color={this.state.color} light={this.state.light}/> ).map( (e, index) => <Col key={index} xs={12} md={2}>{e}</Col>) }
     </Row>
     </Grid>
   </div>

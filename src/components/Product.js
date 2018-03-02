@@ -8,8 +8,7 @@ const Product = ({ asin, color, light }) => (
     <ListGroupItem><Image src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
     <ListGroupItem>{asin}</ListGroupItem>
     <ListGroupItem>$100</ListGroupItem>
-    <ListGroupItem>{color}</ListGroupItem>
-    <ListGroupItem>{light}</ListGroupItem>
+    <ListGroupItem>{color}, {light}</ListGroupItem>
   </ListGroup>
 )
 
