@@ -7,8 +7,16 @@ import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import Image from 'react-bootstrap/lib/Image'
 
+import DropdownButton from 'react-bootstrap/lib/DropdownButton'
+import MenuItem from 'react-bootstrap/lib/MenuItem'
+
 const Table = ({ colors }) => (
   <div>
+    <DropdownButton title={"Skin color"}>
+      <MenuItem>White</MenuItem>
+      <MenuItem>Asian</MenuItem>
+    </DropdownButton>
+
     <Grid>
       <Row className="show-grid">
         <Col xs={12} md={2}>
