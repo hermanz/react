@@ -4,8 +4,8 @@ import ListGroupItem from 'react-bootstrap/lib/ListGroupItem'
 
 const Product = ({ color }) => (
   <ListGroup>
-    <ListGroupItem>Price: $100</ListGroupItem>
-    <ListGroupItem>Color: {color}</ListGroupItem>
+    <ListGroupItem>$100</ListGroupItem>
+    <ListGroupItem>{color}</ListGroupItem>
   </ListGroup>
   /*
   <div>
