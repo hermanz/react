@@ -31,8 +31,12 @@ class Table extends React.Component {
   changeLight(x) {
     this.setState({
       light: x,
-      drop_light:x
+      
     });
+  }
+
+  changeDropboxText(z) {
+    this.setState({ drop_light: z})
   }
 
   render() {
@@ -50,9 +54,11 @@ class Table extends React.Component {
       <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
     </DropdownButton>
 
-              <DropdownButton title={this.state.drop_light} className="completer-dropdown-holder">
-      <MenuItem onClick={() => this.changeLight("bright")}>Daylight</MenuItem>
-      <MenuItem onClick={() => this.changeLight("room")}>Room light</MenuItem>
+    <DropdownButton title={this.state.drop_light} className="completer-dropdown-holder">
+      <MenuItem onClick={() => {this.changeLight("bright");
+                  this.changeDropboxText("Daylight")}}>Daylight</MenuItem>
+    <MenuItem onClick={() => {this.changeLight("room");
+    this.changeDropboxText("Room light")}}>Room light</MenuItem>
     </DropdownButton>
         </Col>
       </Row>
