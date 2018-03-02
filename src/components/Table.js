@@ -59,6 +59,7 @@ class Table extends React.Component {
           <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
           <ListGroupItem>Name</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
+          <ListGroupItem>Sold By</ListGroupItem>
           <ListGroupItem>Color sample</ListGroupItem>
         </ListGroup>
         </Col>
