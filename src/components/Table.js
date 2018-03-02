@@ -14,7 +14,8 @@ class Table extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      color: "White"
+      color: "color choice",
+      light: "light choice"
     };
   }
 
@@ -24,25 +25,46 @@ class Table extends React.Component {
     });
   }
 
+  changeLight(l) {
+    this.setState({
+      light: l
+    });
+  }
+
   render() {
     return (
   <div>
+    <h2>Compare with similar items</h2>
     <DropdownButton title={"Skin color"}>
       <MenuItem onClick={ () => this.changeColor("White") }>White</MenuItem>
       <MenuItem onClick={ () => this.changeColor("Asian") }>Asian</MenuItem>
     </DropdownButton>
 
-    <Grid>
+    <DropdownButton title={"light effect"}>
+      <MenuItem onClick={() => this.changeLight("Warm light")}>Warm light</MenuItem>
+      <MenuItem onClick={() => this.changeLight("Room Light")}>Room light</MenuItem>
+      <MenuItem onClick={() => this.changeLight("Cold Light")}>Cold light</MenuItem>
+    </DropdownButton>
+
+    <Grid >
       <Row className="show-grid">
         <Col xs={12} md={2}>
         <ListGroup>
           <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
           <ListGroupItem>ASIN</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
-          <ListGroupItem>Color</ListGroupItem>
+          <ListGroupItem><DropdownButton title={"Skin color"}>
+            <MenuItem onClick={() => this.changeColor("White")}>White</MenuItem>
+            <MenuItem onClick={() => this.changeColor("Asian")}>Asian</MenuItem>
+          </DropdownButton></ListGroupItem>
+          <ListGroupItem><DropdownButton title={"light effect"}>
+            <MenuItem onClick={() => this.changeLight("Warm light")}>Warm light</MenuItem>
+            <MenuItem onClick={() => this.changeLight("Room Light")}>Room light</MenuItem>
+            <MenuItem onClick={() => this.changeLight("Cold Light")}>Cold light</MenuItem>
+          </DropdownButton></ListGroupItem>
         </ListGroup>
         </Col>
-      { this.props.asins.map( e => <Product asin={ e } color={this.state.color}/> ).map( e => <Col xs={12} md={2}>{e}</Col>) }
+      { this.props.asins.map( e => <Product asin={ e } color={this.state.color} light={this.state.light}/> ).map( e => <Col xs={12} md={2}>{e}</Col>) }
     </Row>
     </Grid>
   </div>
