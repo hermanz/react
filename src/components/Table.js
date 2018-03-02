@@ -36,7 +36,7 @@ class Table extends React.Component {
   <div>
     <Grid >
       <Row>
-        <h2>Compare with similar items</h2>
+        <h2 style={{color:'#d2691e'}} >Compare with similar items</h2>
       </Row>
       <Row className="show-grid">
         <Col xs={12} md={4} mdOffset={8}>
