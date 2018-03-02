@@ -15,20 +15,28 @@ class Table extends React.Component {
     super();
     this.state = {
       color: "white",
-      light: "bright"
+      light: "bright",
+      drop_skin: "Skin color",
+      drop_light: "Lighting",
     };
   }
 
   changeColor(c) {
     this.setState({
-      color: c
+      color: c,
+      drop_skin: c
     });
   }
 
   changeLight(x) {
     this.setState({
-      light: x
+      light: x,
+      
     });
+  }
+
+  changeDropboxText(z) {
+    this.setState({ drop_light: z})
   }
 
   render() {
@@ -39,24 +47,26 @@ class Table extends React.Component {
         <h2 style={{color:'#d2691e'}} >Compare with similar items</h2>
       </Row>
       <Row className="show-grid">
-        <Col xs={12} md={4} mdOffset={8}>
-    <DropdownButton title={"Skin color"}>
-      <MenuItem onClick={ () => this.changeColor("white") }>Light</MenuItem>
-      <MenuItem onClick={ () => this.changeColor("asian") }>Medium</MenuItem>
+        <Col xs={12} md={4} mdOffset={7}>
+              <DropdownButton title={this.state.drop_skin} className="completer-dropdown-holder">
+      <MenuItem onClick={ () => this.changeColor("white") }>White</MenuItem>
+      <MenuItem onClick={ () => this.changeColor("asian") }>Asian</MenuItem>
       <MenuItem onClick={ () => this.changeColor("dark") }>Dark</MenuItem>
       <MenuItem onClick={ () => this.changeColor("asian") }>Upload photo</MenuItem>
     </DropdownButton>
 
-    <DropdownButton title={"Lighting"}>
-      <MenuItem onClick={() => this.changeLight("bright")}>Daylight</MenuItem>
-      <MenuItem onClick={() => this.changeLight("room")}>Room light</MenuItem>
+    <DropdownButton title={this.state.drop_light} className="completer-dropdown-holder">
+      <MenuItem onClick={() => {this.changeLight("bright");
+                  this.changeDropboxText("Daylight")}}>Daylight</MenuItem>
+    <MenuItem onClick={() => {this.changeLight("room");
+    this.changeDropboxText("Room light")}}>Room light</MenuItem>
     </DropdownButton>
         </Col>
       </Row>
 
       <Row className="show-grid">
         <Col xs={12} md={2}>
-        <ListGroup>
+          <ListGroup>
           <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
           <ListGroupItem>Name</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
