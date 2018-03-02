@@ -18,7 +18,7 @@ class Product extends React.Component {
     <ListGroupItem>{this.props.asin}</ListGroupItem>
     <ListGroupItem>{m[ this.props.asin ]}</ListGroupItem>
     <ListGroupItem>{n[ this.props.asin ]}</ListGroupItem>
-    <ListGroupItem><img width={130} height={140} src={"../../assets/" + this.props.asin + "_" + this.props.color + "_" + this.props.light + ".jpg"} /></ListGroupItem>
+    <ListGroupItem style={{width:'165px', height:'163px'}}><img width={130} height={140} src={"../../assets/" + this.props.asin + "_" + this.props.color + "_" + this.props.light + ".jpg"} /></ListGroupItem>
   </ListGroup>
   );
   }

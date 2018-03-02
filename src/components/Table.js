@@ -60,7 +60,7 @@ class Table extends React.Component {
           <ListGroupItem>Name</ListGroupItem>
           <ListGroupItem>Price</ListGroupItem>
           <ListGroupItem>Sold By</ListGroupItem>
-          <ListGroupItem>Color sample</ListGroupItem>
+          <ListGroupItem style={{width:'165px', height:'163px'}}>Color sample</ListGroupItem>
         </ListGroup>
         </Col>
       { this.props.asins.map( e => <Product key={e.toString()} asin={ e } color={this.state.color} light={this.state.light}/> ).map( (e, index) => <Col key={index} xs={12} md={2}>{e}</Col>) }
