@@ -7,11 +7,11 @@ import Table from './components/Table'
 
 class App extends Component {
   render() {
-    const colors = ["red", "blue", "green", "black", "white"];
+    const asins = ["asin0", "asin1", "asin2"];
 
     return (
       <div>
-        <Table colors={colors} />
+        <Table asins={asins} />
       </div>
     );
   }
