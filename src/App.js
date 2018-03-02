@@ -4,9 +4,10 @@ import './App.css';
 
 import Product from './components/Product'
 import Table from './components/Table'
+
 class App extends Component {
   render() {
-    const colors = ["red", "blue", "green"];
+    const colors = ["red", "blue", "green", "black", "white"];
 
     return (
       <div>
