@@ -56,10 +56,10 @@ class Table extends React.Component {
       <Row className="show-grid">
         <Col xs={12} md={2}>
         <ListGroup>
-          <ListGroupItem><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
-          <ListGroupItem>Name</ListGroupItem>
-          <ListGroupItem>Price</ListGroupItem>
-          <ListGroupItem>Color sample</ListGroupItem>
+          <ListGroupItem ><Image style={{visibility:'hidden'}} src="../../assets/bootstrap-img-mock.png" responsive /></ListGroupItem>
+          <ListGroupItem >Name</ListGroupItem>
+          <ListGroupItem >Price</ListGroupItem>
+          <ListGroupItem className = "color-row-container">Color sample</ListGroupItem>
         </ListGroup>
         </Col>
       { this.props.asins.map( e => <Product key={e.toString()} asin={ e } color={this.state.color} light={this.state.light}/> ).map( (e, index) => <Col key={index} xs={12} md={2}>{e}</Col>) }
