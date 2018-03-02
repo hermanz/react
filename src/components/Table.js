@@ -6,9 +6,10 @@ import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import Image from 'react-bootstrap/lib/Image'
-
+import Button from 'react-bootstrap/lib/Button'
 import DropdownButton from 'react-bootstrap/lib/DropdownButton'
 import MenuItem from 'react-bootstrap/lib/MenuItem'
+import CameraApplication from './CameraApplication'
 
 class Table extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class Table extends React.Component {
       <MenuItem onClick={() => this.changeLight("bright")}>Daylight</MenuItem>
       <MenuItem onClick={() => this.changeLight("room")}>Room light</MenuItem>
     </DropdownButton>
+    <Button onClick={() => CameraApplication.takePicture()} bsStyle="primary">Camera</Button>
         </Col>
       </Row>
 
